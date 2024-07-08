@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline{
 
     agent any
@@ -7,9 +9,12 @@ pipeline{
         stage('Git Checkout'){
                   
             steps{
-			script{
-				git branch: 'main', url: 'https://github.com/narayanajbs/ecrdevops_java_app.git'
-			}
+				script{
+						gitCheckout(
+							branch: "main"
+							url: "https://github.com/narayanajbs/ecrdevops_java_app.git"
+						)
+					}
                }
         }
      
