@@ -11,7 +11,7 @@ pipeline{
             steps{
 				script{
 						gitCheckout(
-							branch: "main"
+							branch: "main",
 							url: "https://github.com/narayanajbs/ecrdevops_java_app.git"
 						)
 					}
